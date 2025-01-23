@@ -3,7 +3,9 @@ def calculate_square(number):
 
 if __name__ == "__main__":
     try:
-        num = int(input("Enter a number: "))
-        print(f"The square of {num} is {calculate_square(num)}")
+        numbers = input("Enter numbers separated by spaces: ").split()
+        results = [f"The square of {int(num)} is {calculate_square(int(num))}" for num in numbers]
+        print("\n".join(results))
     except ValueError:
-        print("Please enter a valid number!")
+        print("Please enter only valid numbers!")
+
